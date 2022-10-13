@@ -1,0 +1,15 @@
+<h1>Update member</h1>
+
+<form action="updatebezero/{{ bezero.id }}" method="post">
+{% csrf_token %}
+Izena:<br>
+<input name="izena" value="{{ bezero.izena }}">
+<br><br>
+Abizena:<br>
+<input name="abizena" value="{{ bezero.abizena }}">
+<br><br>
+Urteak:<br>
+<input name="adina" value="{{ bezero.adina }}">
+<br><br>
+<input type="submit" value="Submit">
+</form>

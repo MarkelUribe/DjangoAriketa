@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            table{
+    
+            }
+            .container{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            #kutxabezero{
+                width: 150px;
+                border: 1px solid #aaa;
+                margin: 15px;
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+                
+            }
+            #kutxabezero div{
+                margin: 3px;
+            }
+        </style>
+    </head>
+<body>
+<a href="../" class="link-primary">Atzera</a>
+<h1>Produktuak</h1>
+<div class="container">
+    {% for x in produktuak %}
+            <div id="kutxabezero">
+                <div>{{ x.izena }}</div>
+                <div>{{ x.prezioa }}</div>
+            </div>
+            {% endfor %}
+</div>
+</body>
+</html>
