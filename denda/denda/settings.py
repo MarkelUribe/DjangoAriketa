@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'denda',
     'bezero',
-    'produktuak',
 ]
 
 MIDDLEWARE = [

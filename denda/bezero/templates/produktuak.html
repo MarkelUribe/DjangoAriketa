@@ -32,6 +32,15 @@
             <div id="kutxabezero">
                 <div>{{ x.izena }}</div>
                 <div>{{ x.prezioa }}</div>
+                
+                <div>
+                    <select>
+                        {% for j in bezeroak %}
+                        <option>{{ j.izena }}</option>
+                        {% endfor %}
+                    </select>
+                    <a>erosi</a>
+                </div>
             </div>
             {% endfor %}
 </div>

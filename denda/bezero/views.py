@@ -5,12 +5,35 @@ from .models import *
 
 # Create your views here.
 def index(request):
+    template = loader.get_template('homepage.html')
+    return HttpResponse(template.render({}, request))
+  
+def bezero(request):
     bezeroak = Bezero.objects.all()
     template = loader.get_template('my.html')
     context = {
         'bezeroak': bezeroak,
     }
     return HttpResponse(template.render(context, request))
+  
+def produktuak(request):
+  produktuak = Produktuak.objects.all()
+  bezeroak = Bezero.objects.all()
+  template = loader.get_template('produktuak.html')
+  context = {
+      'produktuak': produktuak,
+      'bezeroak': bezeroak,
+      
+  }
+  return HttpResponse(template.render(context, request))
+
+
+def addErosketa(request):
+    x = request.POST['bezeroa']
+    y = request.POST['produktua']
+    erosketa = Erosketak(bezeroa=x, produktua=y)
+    erosketa.save()
+    return HttpResponseRedirect(reverse('index'))
 
 def add(request):
     template = loader.get_template('add.html')
@@ -47,3 +70,4 @@ def updatebezero(request, id):
   bezero.adina = adina
   bezero.save()
   return HttpResponseRedirect(reverse('index'))
+
